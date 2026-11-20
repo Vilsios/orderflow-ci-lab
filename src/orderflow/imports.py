@@ -24,10 +24,17 @@ def merge_supplier_catalog(current: dict, incoming: list[dict]):
         updated[product['sku']] = existing
     return updated
 
+
 def read_document(storage_root: str, folder: str, document_name: str):
     root = Path(storage_root).resolve()
-    filename = (root / folder / document_name).resolve()
+    filename = root / folder / document_name
+    filename = filename.resolve()
+
+    if not filename.is_relative_to(root):
+        raise ValueError('Document path escapes storage root')
+
     return filename.read_text(encoding='utf-8')
+
 
 def parse_import_metadata(text: str):
     metadata = json.loads(text)

@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from orderflow.access import Principal, can_view_order, safe_return_url
 from orderflow.billing import Payment, payment_summary, convert_minor_units
 from orderflow.customers import Customer, segment

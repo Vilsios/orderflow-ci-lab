@@ -1,6 +1,6 @@
 from datetime import date
 from orderflow.accounts import Account, find_account, verify_webhook
-from orderflow.analytics import popular_products, revenue_trend
+from orderflow.analytics import popular_products
 from orderflow.fulfillment import Basket, Line, calculate_invoice, reserve_items
 from orderflow.imports import parse_supplier_catalog, merge_supplier_catalog
 from orderflow.promotions import apply_promotions

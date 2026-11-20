@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 coverage.xml
 *.db
+certs/server.key
+generate_cert.py
+*.egg-info/
+certs/server.key
